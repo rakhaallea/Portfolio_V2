@@ -32,6 +32,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Initialize Interactive Contact Form & Clipboard
   // initContact();
-
-  console.log('⚡ Modern Vanilla JS Portfolio loaded successfully via Vite.');
 });

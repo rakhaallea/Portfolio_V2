@@ -12,7 +12,7 @@ export const projectsData = [
     description: 'Interactive Vanilla JavaScript SPA integrating Kitsu REST API, featuring Separation of Concerns architecture, dynamic sliding window pagination, debounced search, LocalStorage watchlist, embedded trailers, and skeleton loading.',
     tags: ['Vanilla JS', 'REST API', 'Async/Await', 'LocalStorage', 'Glassmorphism'],
     thumbnailBg: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
-    thumbnailImage: './assets/projects/anime-catalog.png',
+    thumbnailImage: './public/assets/projects/anime-catalog.png',
     demoUrl: 'https://anime-catalog-kitsu-gsv0y735s-rakhaaaes-projects.vercel.app/',
     githubUrl: 'https://github.com/rakhaallea/anime_catalog_kitsu_api',
     features: [
@@ -55,7 +55,7 @@ const weatherRes = await fetch(\`https://api.open-meteo.com/v1/forecast?latitude
     description: 'Clean, responsive Notes Management Application with persistent LocalStorage state management, full CRUD operations, category tags, and realtime search filtering.',
     tags: ['Vanilla JavaScript', 'LocalStorage', 'Full CRUD', 'Realtime Search', 'Event Delegation'],
     thumbnailBg: 'linear-gradient(135deg, #064e3b 0%, #047857 100%)',
-    thumbnailImage: './assets/projects/notes_app.jpg',
+    thumbnailImage: './public/assets/projects/notes_app.jpg',
     demoUrl: 'https://notes-app-vanilla-js-nu.vercel.app/',
     githubUrl: 'https://github.com/rakhaallea/notes_app_vanilla_js',
     features: [
