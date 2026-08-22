@@ -36,7 +36,7 @@ export const projectsData = [
     thumbnailBg: 'linear-gradient(135deg, #4fa1f7 0%, #2575fc 50%, #6a11cb 100%)',
     thumbnailImage: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80',
     demoUrl: 'https://weather-app-three-sigma-z9d9plazqf.vercel.app/',
-    githubUrl: 'https://github.com/rakhaallea/weather-pulse-app',
+    githubUrl: 'https://github.com/rakhaallea/weather-app',
     features: [
       'City search with Open-Meteo Geocoding API',
       'Real-time temperature and wind speed metrics',
@@ -101,8 +101,8 @@ statusRegion.setAttribute('aria-live', 'polite');`
     tags: ['Vanilla JavaScript', 'LocalStorage', 'Event Delegation', 'Accessibility (a11y)', 'Glassmorphism UI'],
     thumbnailBg: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
     thumbnailImage: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80',
-    demoUrl: 'https://todo-app-vanilla-js.vercel.app/',
-    githubUrl: 'https://github.com/rakhaallea/todo_app_vanilla_js',
+    demoUrl: 'https://todo-app-vanilla-js-rijq.vercel.app/',
+    githubUrl: 'https://github.com/rakhaallea/notes_app_vanilla_js',
     features: [
       'Task Management (CRUD): Add, toggle completion status, and remove tasks dynamically',
       'Dual-Block Interface: Automatic visual separation between active and completed tasks',
