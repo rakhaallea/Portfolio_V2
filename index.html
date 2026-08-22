@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allea Rakha Mahardhika | Frontend Developer & UI Engineer</title>
+    <meta name="description" content="Modern Responsive Portfolio built purely with Vanilla JavaScript, ES Modules, dynamic particle canvas, adaptive dual-navigation, and category filtering." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/src/styles/style.css" />
+  </head>
+  <body>
+    <!-- Interactive Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="app-container">
+      <!-- ==============================================
+      A. DESKTOP NAVIGATION (>= 768px) -> LEFT SIDEBAR
+      =============================================== -->
+      <aside class="sidebar" id="desktop-sidebar">
+        <!-- Profile Avatar & Title -->
+        <div class="profile-avatar-wrapper">
+          <img 
+            src="assets/profile_2.png" 
+            alt="Developer Avatar" 
+            class="profile-avatar"
+            id="profile-avatar-img"
+          />
+          <div class="status-dot" title="Available for freelance & full-time roles"></div>
+        </div>
+
+        <div class="sidebar-title">
+          <h2 class="developer-name" id="sidebar-dev-name">Allea Rakha Mahardhika</h2>
+          <p class="developer-role" id="sidebar-dev-role">Frontend Developer / Aspiring Full-Stack</p>
+          <div class="badge-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            Pure Vanilla JS + Vite
+          </div>
+        </div>
+
+        <!-- Vertical Navigation Links -->
+        <nav>
+          <ul class="nav-list" id="desktop-nav-list">
+            <li>
+              <a href="#home" class="nav-link active" id="nav-home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills" class="nav-link" id="nav-skills">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <span>Skills & Stack</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" class="nav-link" id="nav-projects">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <span>Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="#deployment" class="nav-link" id="nav-deployment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span>Architecture & CI/CD</span>
+              </a>
+            </li>
+            <!-- <li>
+              <a href="#contact" class="nav-link" id="nav-contact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>Contact</span>
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+
+        <!-- Sidebar Footer & Quick Socials -->
+        <div class="sidebar-footer">
+          <div class="sidebar-social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile" id="sidebar-gh-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile" id="sidebar-li-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <button class="social-icon-btn copy-btn" data-copy="rakhaallea@gmail.com" title="Copy Email" id="sidebar-mail-copy">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ==============================================
+           B. MOBILE NAVIGATION (< 768px) -> BOTTOM BAR
+      =============================================== -->
+      <nav class="bottom-nav" id="mobile-bottom-nav">
+        <a href="#home" class="bottom-nav-link active" id="mob-nav-home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Home</span>
+        </a>
+        <a href="#skills" class="bottom-nav-link" id="mob-nav-skills">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          <span>Skills</span>
+        </a>
+        <a href="#projects" class="bottom-nav-link" id="mob-nav-projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <span>Projects</span>
+        </a>
+        <a href="#deployment" class="bottom-nav-link" id="mob-nav-deployment">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <span>CI/CD</span>
+        </a>
+        <!-- <a href="#contact" class="bottom-nav-link" id="mob-nav-contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Contact</span>
+        </a> -->
+      </nav>
+
+      <!-- ==============================================
+           MAIN CONTENT SECTIONS
+      =============================================== -->
+      <main class="main-content" id="main-content-wrapper">
+        
+        <!-- SECTION 1: HERO (#home) -->
+        <section id="home" class="section-container hero-wrapper">
+          <div class="hero-status-pill" id="hero-status-pill">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399;"></span>
+            <span>Available for new technical opportunities</span>
+          </div>
+
+          <h1 class="hero-heading">
+            Hi, I'm <span style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Rakha</span>
+          </h1>
+
+          <!-- Dynamic Typing Effect Hook -->
+          <div class="hero-typing-container" id="hero-typing-container">
+            <span id="typing-text">Building Responsive Web Apps</span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="hero-bio">
+            A passionate frontend developer focused on writing clean, modular Vanilla JavaScript, modern responsive layouts, and performant user experiences. Mastered asynchronous architecture, DOM state persistence, and continuous deployment workflows.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary" id="hero-btn-projects">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              Explore Projects
+            </a>
+            <a href="https://github.com/rakhaallea" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="hero-btn-github">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              View GitHub
+            </a>
+          </div>
+
+          <!-- Highlight metrics / capabilities -->
+          <div class="hero-highlight-chips">
+            <div class="highlight-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Zero-Framework Vanilla JS</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Modular ES6 Architecture</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Automated CI/CD Ready</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% Mobile & Desktop Adaptive</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: SKILLS & TECH STACK (#skills) -->
+        <section id="skills" class="section-container">
+          <div class="section-header">
+            <span class="section-tag">&lt; Tech Stack &amp; Curriculum /&gt;</span>
+            <h2 class="section-title">Skills &amp; Technologies</h2>
+            <p class="section-desc">
+              Core competencies mastered throughout intensive frontend modules: semantic layouts, dynamic DOM mutations, asynchronous data fetching, client-side persistence, and modern bundlers.
+            </p>
+          </div>
+
+          <!-- Dynamic Skills Grid Container -->
+          <div class="skills-grid" id="skills-grid-container"></div>
+        </section>
+
+        <!-- SECTION 3: PROJECTS WITH CATEGORY FILTER (#projects) -->
+        <section id="projects" class="section-container">
+          <div class="section-header">
+            <span class="section-tag">&lt; Handcrafted Portfolio /&gt;</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-desc">
+              Explore dynamic web applications built with pure Vanilla JavaScript, highlighting asynchronous API integrations, local state persistence, and form validation logic.
+            </p>
+          </div>
+
+          <!-- Category Filter Buttons -->
+          <div class="project-filters" id="project-filters-group">
+            <button class="filter-btn active" data-category="all" id="filter-all">
+              All Projects <span class="filter-count">4</span>
+            </button>
+            <button class="filter-btn" data-category="api" id="filter-api">
+              API Integrations <span class="filter-count">2</span>
+            </button>
+            <button class="filter-btn" data-category="state" id="filter-state">
+              DOM &amp; State / LocalStorage <span class="filter-count">1</span>
+            </button>
+            <button class="filter-btn" data-category="forms" id="filter-forms">
+              Forms &amp; Regex <span class="filter-count">1</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Projects Grid Container -->
+          <div class="projects-grid" id="projects-container"></div>
+        </section>
+
+        <!-- SECTION 4: CI/CD & DEPLOYMENT SHOWCASE (#deployment) -->
+        <section id="deployment" class="section-container">
+          <div class="section-header">
+            <span class="section-tag">&lt; Production Pipeline /&gt;</span>
+            <h2 class="section-title">Architecture &amp; CI/CD Pipeline</h2>
+            <p class="section-desc">
+              How code transitions seamlessly from local development into globally distributed, high-performance edge production deployments.
+            </p>
+          </div>
+
+          <!-- 4-Step Pipeline Visual Flow -->
+          <div class="pipeline-flow">
+            <div class="glass-card pipeline-step">
+              <div class="pipeline-step-header">
+                <div class="pipeline-step-num">01</div>
+                <h3 class="pipeline-step-title">Git Commits</h3>
+              </div>
+              <p class="pipeline-step-desc">
+                Structured atomic commits adhering to conventional changelog rules on feature branches.
+              </p>
+              <div class="pipeline-code-block">
+                <code>git commit -m "feat: add anime catalog"</code>
+              </div>
+            </div>
+
+            <div class="glass-card pipeline-step">
+              <div class="pipeline-step-header">
+                <div class="pipeline-step-num">02</div>
+                <h3 class="pipeline-step-title">GitHub Sync</h3>
+              </div>
+              <p class="pipeline-step-desc">
+                Remote repository synchronization triggering automated webhooks and branch protection checks.
+              </p>
+              <div class="pipeline-code-block">
+                <code>git push origin main</code>
+              </div>
+            </div>
+
+            <div class="glass-card pipeline-step">
+              <div class="pipeline-step-header">
+                <div class="pipeline-step-num">03</div>
+                <h3 class="pipeline-step-title">Vercel Build</h3>
+              </div>
+              <p class="pipeline-step-desc">
+                Vite bundler compiles tree-shaken ESM assets, minify CSS, and generates optimized distribution artifacts.
+              </p>
+              <div class="pipeline-code-block">
+                <code>vite build --mode prod</code>
+              </div>
+            </div>
+
+            <div class="glass-card pipeline-step">
+              <div class="pipeline-step-header">
+                <div class="pipeline-step-num">04</div>
+                <h3 class="pipeline-step-title">Edge Production</h3>
+              </div>
+              <p class="pipeline-step-desc">
+                Instant global CDN deployment with automated SSL certificates, asset compression, and instant invalidation.
+              </p>
+              <div class="pipeline-code-block">
+                <code>Status: 200 OK (Edge CDN)</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Build Simulator -->
+          <div class="glass-card deployment-simulator" id="deployment-sim-box">
+            <div class="sim-header">
+              <div>
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">Interactive Pipeline Runner</h4>
+                <p style="font-size: 0.82rem; color: var(--text-muted);">Simulate real-time Vite compilation &amp; Vercel deployment pipeline</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <div class="sim-status" id="build-status-indicator">
+                  <span style="color: #34d399; display: inline-flex; align-items: center; gap: 6px;">
+                    <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#34d399;"></span>
+                    Production Ready
+                  </span>
+                </div>
+                <button class="btn-primary" style="padding: 8px 18px; font-size: 0.84rem;" id="trigger-build-btn">
+                  Trigger CI/CD Build
+                </button>
+              </div>
+            </div>
+
+            <!-- Terminal Output Box -->
+            <div class="sim-terminal" id="terminal-output">
+              <div class="terminal-line info">ℹ Pipeline idle. Click "Trigger CI/CD Build" to initiate simulated production build.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 5: CONTACT (#contact) -->
+        <!-- <section id="contact" class="section-container"> -->
+          <!-- <div class="section-header">
+            <span class="section-tag">&lt; Let's Connect /&gt;</span>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-desc">
+              Have a project in mind, want to collaborate on open-source, or discuss developer opportunities? Send a message below.
+            </p>
+          </div> -->
+
+          <!-- <div class="contact-layout"> -->
+            <!-- Contact Channels & Info -->
+            <!-- <div class="glass-card contact-info-card">
+              <h3 style="font-size: 1.2rem; font-weight: 700; color: #fff;">Direct Channels</h3>
+              
+              <div class="contact-method copy-btn" data-copy="rakhaallea@gmail.com" style="cursor: pointer;" title="Click to copy email" id="contact-email-row">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Email Address (Click to Copy)</div>
+                  <div class="contact-val">rakhaallea@gmail.com</div>
+                </div>
+              </div>
+
+              <div class="contact-method copy-btn" data-copy="rakha#8892" style="cursor: pointer;" title="Click to copy Discord handle" id="contact-discord-row">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <div>
+                  <div class="contact-label">Discord (Click to Copy)</div>
+                  <div class="contact-val">rakha#8892</div>
+                </div>
+              </div>
+
+              <a href="https://github.com/rakhaallea" target="_blank" rel="noopener noreferrer" class="contact-method" id="contact-github-row">
+                <div class="contact-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div>
+                  <div class="contact-label">GitHub</div>
+                  <div class="contact-val">github.com/rakhaallea ↗</div>
+                </div>
+              </a>
+            </div> -->
+
+            <!-- Interactive Contact Form -->
+            <!-- <div class="glass-card">
+              <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Your Name</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="Alex Johnson" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="alex@example.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Your Message</label>
+                  <textarea id="contact-message" class="form-textarea" placeholder="Hello! I'd love to discuss a project..." required></textarea>
+                </div>
+
+                <div class="form-feedback" id="form-feedback"></div>
+
+                <button type="submit" class="btn-primary" style="width: 100%;" id="contact-submit-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div> -->
+        <!-- </section> -->
+
+      </main>
+    </div>
+
+    <!-- Interactive Project Details / Preview Modal -->
+    <div class="project-modal" id="project-modal">
+      <div class="glass-card modal-card" id="project-modal-card">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+        <div id="modal-content-slot"></div>
+      </div>
+    </div>
+
+    <!-- Main JavaScript Modules -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

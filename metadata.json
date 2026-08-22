@@ -1,0 +1,6 @@
+{
+  "name": "Modern Responsive Portfolio",
+  "description": "A high-performance modern portfolio built with Vanilla JavaScript, ES Modules, dynamic particle canvas, adaptive dual-navigation, category filtering, and glassmorphism styling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
